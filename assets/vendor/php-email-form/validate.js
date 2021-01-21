@@ -2,7 +2,8 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.php-email-form').submit(function() {
+  // $('form.php-email-form').submit(function() {
+    $('form').submit(function() {
    
     var f = $(this).find('.form-group'),
       ferror = false,
@@ -106,18 +107,36 @@ jQuery(document).ready(function($) {
     this_form.find('.loading').slideDown();
     
     $.ajax({
-      type: "POST",
-      url: action,
-      data: str,
-      success: function(msg) {
-        if (msg == 'OK') {
+      // type: "POST",
+      // url: action,
+      // data: str,
+      // success: function(msg) {
+      //   if (msg == 'OK') {
+      //     this_form.find('.loading').slideUp();
+      //     this_form.find('.sent-message').slideDown();
+      //     this_form.find("input:not(input[type=submit]), textarea").val('');
+      //   } else {
+      //     this_form.find('.loading').slideUp();
+      //     this_form.find('.error-message').slideDown().html(msg);
+      //   }
+      // }
+          
+      url:'https://api.telegram.org/bot1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw/sendMessage',
+      // url:'https://api.telegram.org/bot'+$('#token').val()+'/sendMessage',
+      method:'POST',
+      data:{chat_id:'-458916939',text:'Name : '+$('#name').val()+'\n E-mail : '+$('#email').val()+'\n Subject : '+$('#subject').val()+'\n Message body : '+$('#message_body').val()},
+      // data:{chat_id:'$('#chat_id').val()',text:$('#text').val()},
+      success:function(){
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
+          setTimeout(function(){
+          this_form.find('.sent-message').slideUp();
+         }, 2000);
           this_form.find("input:not(input[type=submit]), textarea").val('');
-        } else {
+      },
+      error: function (request, status, error) {
           this_form.find('.loading').slideUp();
           this_form.find('.error-message').slideDown().html(msg);
-        }
       }
     });
     return false;
