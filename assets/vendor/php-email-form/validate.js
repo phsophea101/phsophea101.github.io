@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
       },
       error: function (request, status, error) {
           this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
+          this_form.find('.error-message').slideDown().html(error);
       }
     });
     return false;
