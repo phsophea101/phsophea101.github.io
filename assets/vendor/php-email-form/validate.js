@@ -135,8 +135,6 @@ jQuery(document).ready(function($) {
           this_form.find("input:not(input[type=submit]), textarea").val('');
       },
       error: function (request, status, error) {
-        console.log(request);
-        console.log(status);
         var message = error;
         if(!error){
           message ='Unkown error';
