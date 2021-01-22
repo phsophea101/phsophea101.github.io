@@ -337,7 +337,7 @@ section {
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
-  text-transform: uppercase;
+  font-variant: small-caps;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -475,6 +475,7 @@ section {
 # Resume
 --------------------------------------------------------------*/
 .resume .resume-title {
+  font-variant: small-caps;
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -734,6 +735,7 @@ section {
 }
 
 .services .icon-box h4 a {
+  font-variant: small-caps;
   color: #45505b;
   transition: ease-in-out 0.3s;
 }
@@ -748,7 +750,61 @@ section {
   border-color: #fff;
   box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
+.services .iconbox-materialize  i {
+  color: #FA503B ;
+}
 
+.services .iconbox-materialize:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-materialize:hover .icon path {
+  fill: #E46C73 ;
+}
+.services .iconbox-laravel  i {
+  color: #FA503B ;
+}
+
+.services .iconbox-laravel:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-laravel:hover .icon path {
+  fill: #FA503B ;
+}
+.services .iconbox-bootstrap  i {
+  color: #563d7c;
+}
+
+.services .iconbox-bootstrap:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-bootstrap:hover .icon path {
+  fill: #563d7c;
+}
+.services .iconbox-spring i {
+  color: #6DB33F;
+}
+
+.services .iconbox-spring:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-spring:hover .icon path {
+  fill: #6DB33F;
+}
+.services .iconbox-ionic i {
+  color: #478AFF;
+}
+
+.services .iconbox-ionic:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-ionic:hover .icon path {
+  fill: #478AFF;
+}
 .services .iconbox-blue i {
   color: #47aeff;
 }
