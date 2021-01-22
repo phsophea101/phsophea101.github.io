@@ -8,20 +8,20 @@
   "use strict";
 
   // Preloader
-//   $(window).on('load', function() {
-//     if ($('#preloader').length) {
-//       $('#preloader').delay(150).fadeOut('slow', function() {
-//         $(this).remove();
-//       });
-//     }
-//   });
-    $(window).on('load', function() {
-    if ($('.animationload').length) {
-      $('.animationload').delay(150).fadeOut('slow', function() {
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(150).fadeOut('slow', function() {
         $(this).remove();
       });
     }
   });
+//     $(window).on('load', function() {
+//     if ($('.animationload').length) {
+//       $('.animationload').delay(150).fadeOut('slow', function() {
+//         $(this).remove();
+//       });
+//     }
+//   });
 
   // Hero typed
   if ($('.typed').length) {
