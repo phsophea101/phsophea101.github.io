@@ -458,6 +458,7 @@ section {
 }
 
 .skills .progress .skill .val {
+  color: #35BDB2;
   float: right;
   font-style: normal;
 }
