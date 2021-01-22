@@ -135,8 +135,17 @@ jQuery(document).ready(function($) {
           this_form.find("input:not(input[type=submit]), textarea").val('');
       },
       error: function (request, status, error) {
-          this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
+        console.log(request);
+        console.log(status);
+        var message = error;
+        if(!error){
+          message ='Unkown error';
+        }
+        this_form.find('.loading').slideUp();
+        this_form.find('.error-message').slideDown().html("Error message : "+ message);
+        setTimeout(function(){
+          this_form.find('.error-message').slideUp().html("Error message : "+error);
+         }, 3000);
       }
     });
     return false;
