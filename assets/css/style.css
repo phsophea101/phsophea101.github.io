@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-/* #preloader {
+ #preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -101,9 +101,9 @@ h1, h2, h3, h4, h5, h6 {
   100% {
     transform: rotate(360deg);
   }
-} */
+} 
 
-#preloader {
+/*#preloader {
   position: fixed;
   background-color: #fff;
   height: 100%;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 #preloader:before {
   content: "";
   position: fixed;
-/*   top: calc(50% - 30px);
+top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #0563bb;
   border-top-color: #fff;
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 60px;
   height: 60px;
   -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite; */
+  animation: animate-preloader 1s linear infinite;
 }
 .animate-preloader {
     animation: 1.5s linear 0s normal none infinite running osahanloading;
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 100% {
     transform: rotate(360deg);
 }
-}
+} */
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
