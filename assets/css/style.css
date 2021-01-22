@@ -105,19 +105,19 @@ h1, h2, h3, h4, h5, h6 {
 
 #preloader {
   position: fixed;
-  top: 0;
+  background-color: #fff;
+  height: 100%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
 #preloader:before {
   content: "";
   position: fixed;
-  top: calc(50% - 30px);
+/*   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #0563bb;
   border-top-color: #fff;
@@ -126,9 +126,33 @@ h1, h2, h3, h4, h5, h6 {
   width: 60px;
   height: 60px;
   -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite; */
 }
-
+.animate-preloader {
+    animation: 1.5s linear 0s normal none infinite running osahanloading;
+    background: #fed37f none repeat scroll 0 0;
+    border-radius: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+}
+.animate-preloader::after {
+    animation: 1.5s linear 0s normal none infinite running osahanloading_after;
+    border-color: #85d6de transparent;
+    border-radius: 80px;
+    border-style: solid;
+    border-width: 10px;
+    content: "";
+    height: 80px;
+    left: -15px;
+    position: absolute;
+    top: -15px;
+    width: 80px;
+}
 @-webkit-keyframes animate-preloader {
 0% {
     transform: rotate(0deg);
