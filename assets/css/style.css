@@ -752,8 +752,19 @@ section {
   border-color: #fff;
   box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
+.services .iconbox-angular  i {
+  color: #D6002F ;
+}
+
+.services .iconbox-angular:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-angular:hover .icon path {
+  fill: #D6002F ;
+}
 .services .iconbox-materialize  i {
-  color: #FA503B ;
+  color: #E46C73 ;
 }
 
 .services .iconbox-materialize:hover .icon i {
