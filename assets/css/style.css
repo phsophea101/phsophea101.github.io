@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 50px;
-  border: 0.5px solid #35BDB2;
+  border: 0.3px solid #35BDB2;
   background: #f2f3f5;
   height: 56px;
   width: 100%;
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a span {
   font-variant: small-caps;
   padding: 0 5px 0 7px;
-  color: #45505b;
+  /* color: #45505b; */
 }
 
 @media (min-width: 992px) {
@@ -1034,7 +1034,7 @@ section {
   width: 44px;
   height: 44px;
   background: #eef7ff;
-  border: 0.5px solid #35BDB2;
+  border: 0.3px solid #35BDB2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1152,7 +1152,7 @@ section {
   padding: 10px 35px;
   color: #35BDB2;
   transition: 0.4s;
-  border: 0.5px solid #35BDB2;
+  border: 0.3px solid #35BDB2;
   border-radius: 50px;
 }
 
