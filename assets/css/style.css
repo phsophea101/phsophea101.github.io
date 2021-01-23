@@ -382,6 +382,7 @@ section {
   font-weight: 700;
   font-size: 26px;
   color: #65C9FF;
+  font-variant: small-caps;
 }
 
 .about .content ul {
