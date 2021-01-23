@@ -12,7 +12,7 @@
     if ($('#preloader').length) {
       $('#preloader').delay(150).fadeOut('slow', function() {
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-          var chat_id = '-477676685'
+          var chat_id = '-487587096'
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
           // var toten = '1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw'
           // var chat_id = '-458916939'
@@ -23,23 +23,8 @@
             method:'POST',
             data:{chat_id:chat_id,text:'The visitor data on :'+date.getDate()+'-'+date.getMonth()+1+'-'+date.getFullYear()+'\n'+string+' : '+'\n'+data},
             success:function(){
-                this_form.find('.loading').slideUp();
-                this_form.find('.sent-message').slideDown();
-                setTimeout(function(){
-                this_form.find('.sent-message').slideUp();
-               }, 2000);
-                this_form.find("input:not(input[type=submit]), textarea").val('');
             },
             error: function (request, status, error) {
-              var message = error;
-              if(!error){
-                message ='Unkown error';
-              }
-              this_form.find('.loading').slideUp();
-              this_form.find('.error-message').slideDown().html("Error message : "+ message);
-              setTimeout(function(){
-                this_form.find('.error-message').slideUp().html("Error message : "+error);
-               }, 3000);
             }
           });
         })
