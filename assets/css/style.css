@@ -401,6 +401,7 @@ section {
 }
 
 .about .content p:last-child {
+  text-align: justify;
   margin-bottom: 0;
 }
 
