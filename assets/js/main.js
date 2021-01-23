@@ -11,6 +11,11 @@
   $(window).on('load', function() {
     if ($('#preloader').length) {
       $('#preloader').delay(150).fadeOut('slow', function() {
+        var ref = document.referrer;
+        if(ref==''){
+          ref = 'Direct Link'
+        }
+        console.log(ref);
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
           var chat_id = '-487587096'
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
@@ -26,7 +31,7 @@
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,text:'The visitor data on : '+string+', Location:'+location+'\n'+data},
+            data:{chat_id:chat_id,text:'Visitor data: \n'+string+', Location : '+location+', Reference from : '+ref+'\n ---------------------------------------------------------------------------------------'+'\n'+data},
             success:function(){
             },
             error: function (request, status, error) {
