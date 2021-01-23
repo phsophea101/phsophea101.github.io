@@ -105,27 +105,14 @@ jQuery(document).ready(function($) {
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
-    
+    var chat_id = '-477676685'
+    var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
+    // var toten = '1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw'
+    // var chat_id = '-458916939'
     $.ajax({
-      // type: "POST",
-      // url: action,
-      // data: str,
-      // success: function(msg) {
-      //   if (msg == 'OK') {
-      //     this_form.find('.loading').slideUp();
-      //     this_form.find('.sent-message').slideDown();
-      //     this_form.find("input:not(input[type=submit]), textarea").val('');
-      //   } else {
-      //     this_form.find('.loading').slideUp();
-      //     this_form.find('.error-message').slideDown().html(msg);
-      //   }
-      // }
-          
-      url:'https://api.telegram.org/bot1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw/sendMessage',
-      // url:'https://api.telegram.org/bot'+$('#token').val()+'/sendMessage',
+      url:'https://api.telegram.org/bot'+toten+'/sendMessage',
       method:'POST',
-      data:{chat_id:'-458916939',text:'Name : '+$('#name').val()+'\n E-mail : '+$('#email').val()+'\n Subject : '+$('#subject').val()+'\n Message body : '+$('#message_body').val()},
-      // data:{chat_id:'$('#chat_id').val()',text:$('#text').val()},
+      data:{chat_id:chat_id,text:'Name : '+$('#name').val()+'\n E-mail : '+$('#email').val()+'\n Subject : '+$('#subject').val()+'\n Message body : '+$('#message_body').val()},
       success:function(){
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
