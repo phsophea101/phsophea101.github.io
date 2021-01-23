@@ -14,14 +14,19 @@
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
           var chat_id = '-487587096'
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
+          var location = 'Unknown'
+          var loc = 'loc='
+          if(data.includes(loc)){
+            location = data.slice(data.lastIndexOf(loc) + 4,data.lastIndexOf(loc) + 6);
+          }
           // var toten = '1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw'
           // var chat_id = '-458916939'
           let date = new Date(); //actual time in miliseconds
-          let string = date.toString();
+          let string = date.getFullYear()+'-'+date.getMonth()+1+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,text:'The visitor data on :'+date.getDate()+'-'+date.getMonth()+1+'-'+date.getFullYear()+'\n'+string+' : '+'\n'+data},
+            data:{chat_id:chat_id,text:'The visitor data on : '+string+', Location:'+location+'\n'+data},
             success:function(){
             },
             error: function (request, status, error) {
