@@ -109,7 +109,7 @@
               </div>
             </div>
             <p>
-              I just started as a Software Developer in a private company about 2 years ago(started from 2019) and also pursuing a master's degree of Information Technology at University of Puthisastra. Before this, I used to work as a Support Officer at a bank. I’ve been worked in the bank industry for about 3 years and haft for office support. and then I've been changing to work in Software development fields until now.
+              I just started as a Software Developer in a private company about <span id="year"></span> years ago(started from 2019) and also pursuing a master's degree of Information Technology at University of Puthisastra. Before this, I used to work as a Support Officer at a bank. I’ve been worked in the bank industry for about 3 years and haft for office support. and then I've been changing to work in Software development fields until now.
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item-complete pb-0">
               <h4>Sophea PHOS</h4>
-              <p><em>Innovative and deadline-driven Software Developer with 2+ years of experience designing and developing application and software for marketing material from initial concept to final, polished deliverable.</em></p>
+              <p><em>Innovative and deadline-driven Software Developer with <span id="year_plus"></span>+ years of experience designing and developing application and software for marketing material from initial concept to final, polished deliverable.</em></p>
               <ul>
                 <li>Phum Chamraeun Phal, Sangkat Boeung Tumpun, Khan Meanchey, Phnom Penh, Cambodia.</li>
                 <li>(+855) 98 70 73 2?-?</li>
@@ -506,7 +506,9 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Favorite Quote</h3>
+      <div class="section-title">
+        <h2>Favorite Quote</h2>
+      </div>
       <p> You'll never get bored when you try something new.</p>
       <div class="copyright">
         <!-- &copy;Copyright <span id="year"></span>  <strong><span>Kak IT</span></strong>. -->
@@ -518,7 +520,7 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top">
-    <i class="bx bx-up-arrow-alt"></i>
+    <i class="bx bx-chevrons-up"></i>
   </a>
   <div id="preloader"></div>
   <!-- Vendor JS Files -->
@@ -537,7 +539,8 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
-//     document.getElementById("year").innerHTML = new Date().getFullYear();
+  document.getElementById("year").innerHTML = new Date().getFullYear()-2019;
+  document.getElementById("year_plus").innerHTML = new Date().getFullYear()-2019;
 </script>
 </body>
 
