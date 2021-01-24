@@ -286,6 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 15px 0 0 0;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
 }
 
 #hero p span {
@@ -1266,10 +1267,11 @@ section {
 }
 
 #footer p {
-  font-size: 15;
   font-style: italic;
   padding: 0;
   margin: 0 0 40px 0;
+  font-size: 30px;
+  font-variant: small-caps;
 }
 
 #footer .social-links {
@@ -1297,7 +1299,7 @@ section {
   text-decoration: none;
 }
 
-#footer .copyright {
+#footer .copyright {    
   margin: 0 0 5px 0;
 }
 
