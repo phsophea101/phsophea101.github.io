@@ -15,15 +15,19 @@
         if(ref==''){
           ref = 'Direct Link'
         }
-        console.log(ref);
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
           data = data.replace('h=www.cloudflare.com\n','')
           var chat_id = '-487587096'
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
           var location = 'Unknown'
+          var client_data = 'Unknown'
+          var client_uag = 'uag='
           var loc = 'loc='
           if(data.includes(loc)){
             location = data.slice(data.lastIndexOf(loc) + 4,data.lastIndexOf(loc) + 6);
+          }
+          if(data.includes(client_uag)){
+            client_data = data.slice(data.lastIndexOf(client_uag) + 4,data.lastIndexOf('colo='));
           }
           // var toten = '1464068819:AAGHc3Yy4r3OGgUqGQemYYDrTBWDO3qUbZw'
           // var chat_id = '-458916939'
@@ -32,7 +36,7 @@
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,text:'Visitor data: \n'+string+', Location : '+location+', Reference from : '+ref+'\n ---------------------------------------------------------------------------------------'+'\n'+data},
+            data:{chat_id:chat_id,text:'==> Visitor data: '+string+', Location: '+location+'\n==> client data: '+client_data+'==> Reference from: '+ref},
             success:function(){
             },
             error: function (request, status, error) {
