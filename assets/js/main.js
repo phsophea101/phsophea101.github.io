@@ -68,11 +68,19 @@
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false  ) {
+      var element = document.getElementById('clicked');
+      element.style.visibility = 'visible';
+      element.style.opacity = '1';
+      setTimeout(() => {
+        element.style.visibility = 'hidden';
+        element.style.opacity = '0';
+      }, 1000);
+     }
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
         e.preventDefault();
-
         var scrollto = target.offset().top;
 
         $('html, body').animate({
@@ -88,9 +96,11 @@
           $('body').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
         }
+        
         return false;
       }
     }
+    
   });
 
   // Activate smooth scroll on page load with hash links in the url
@@ -154,6 +164,15 @@
   });
 
   $('.back-to-top').click(function() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false ) {
+      var element = document.getElementById('clicked');
+      element.style.visibility = 'visible';
+      element.style.opacity = '1';
+      setTimeout(() => {
+        element.style.visibility = 'hidden';
+        element.style.opacity = '0';
+      }, 1000);
+     }
     $('html, body').animate({
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
