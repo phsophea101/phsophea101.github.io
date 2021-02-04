@@ -190,8 +190,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu a i {
   font-size: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-
+.nav-menu a i:hover {
+  font-size: 30px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 .nav-menu a span {
   font-variant: small-caps;
   padding: 0 5px 0 7px;
@@ -287,13 +293,25 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0;
-  font-size: 64px;
+  font-size: 65px;
   font-weight: 700;
   line-height: 56px;
   color: #45505b;  
   font-variant: small-caps;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
+#hero h1:hover {
+  margin: 0;
+  font-weight: 700;
+  line-height: 56px;
+  color: #407AFF;  
+  font-variant: small-caps;
+  font-size: 50px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 #hero p {
   color: #45505b;
   margin: 15px 0 0 0;
@@ -361,8 +379,20 @@ section {
   padding-bottom: 20px;
   position: relative;
   color: #45505b;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-
+.section-title h2:hover {
+  font-weight: bold;
+  font-variant: small-caps;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #407AFF;
+  font-size: 40px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 .section-title h2::before {
   content: '';
   position: absolute;
@@ -380,7 +410,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #407AFF;
+  background: #FF7575;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -1071,6 +1101,22 @@ section {
   align-items: center;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+}
+.contact .info i:hover {
+  color: #407AFF;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #eef7ff;
+  border: 1px solid #407AFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 30px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .contact .info h4 {
