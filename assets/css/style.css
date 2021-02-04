@@ -571,8 +571,20 @@ section {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-
+.resume .resume-item h5:hover {
+  background:#eef7ff;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #FF7575;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 .resume .resume-item ul {
   padding-left: 10px;
   list-style: none;
@@ -610,8 +622,20 @@ section {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-
+.resume .resume-item-complete h5:hover {
+  background:#eef7ff;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #FF7575;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 .resume .resume-item-complete ul {
   padding-left: 10px;
   list-style: none;
