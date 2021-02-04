@@ -483,7 +483,7 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #f2f3f5;
+  background: #eef7ff;
 }
 
 .skills .progress-bar {
@@ -524,7 +524,7 @@ section {
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #f7f8f9;
+  background:#eef7ff;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -532,7 +532,8 @@ section {
 }
 
 .resume .resume-item ul {
-  padding-left: 20px;
+  padding-left: 10px;
+  list-style: none;
 }
 
 .resume .resume-item ul li {
@@ -562,7 +563,7 @@ section {
 
 .resume .resume-item-complete h5 {
   font-size: 16px;
-  background: #f7f8f9;
+  background: #eef7ff;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -570,13 +571,26 @@ section {
 }
 
 .resume .resume-item-complete ul {
-  padding-left: 20px;
+  padding-left: 10px;
+  list-style: none;
 }
 
 .resume .resume-item-complete ul li {
   padding-bottom: 10px;
 }
 
+.resume .resume-item-complete ul i {
+  padding-bottom: 10px;
+  font-size: 15px;
+  padding-right: 1px;
+  color: #407AFF;
+}
+.resume .resume-item ul i {
+  padding-bottom: 10px;
+  font-size: 15px;
+  padding-right: 1px;
+  color: #407AFF;
+}
 .resume .resume-item-complete:last-child {
   padding-bottom: 0;
 }
