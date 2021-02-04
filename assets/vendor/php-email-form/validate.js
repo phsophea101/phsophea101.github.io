@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
     $.ajax({
       url:'https://api.telegram.org/bot'+toten+'/sendMessage',
       method:'POST',
-      data:{chat_id:chat_id,text:'Name : '+$('#name').val()+'\n E-mail : '+$('#email').val()+'\n Subject : '+$('#subject').val()+'\n Message body : '+$('#message_body').val()},
+      data:{chat_id:chat_id,parse_mode:'Markdown',text:'Name : '+$('#name').val()+'\n E-mail : '+$('#email').val()+'\n Subject : '+$('#subject').val()+'\n Message body : '+$('#message_body').val()},
       success:function(){
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
