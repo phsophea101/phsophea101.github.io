@@ -138,8 +138,8 @@ jQuery(document).ready(function($) {
 
 });
 function socialClick(message) {
-  var chat_id = '-458916939'
-  //var chat_id = '-487587096'
+  //var chat_id = '-458916939'
+  var chat_id = '-487587096'
   var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
   let date = new Date(); //actual time in miliseconds
   let string = date.getFullYear()+'-'+date.getMonth()+1+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()
