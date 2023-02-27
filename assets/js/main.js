@@ -6,27 +6,28 @@
 */
 !(function($) {
   "use strict";
-
+  var location_visitor = 'Unknown';
+  var loading_delay = 1000;
   // Preloader
   $(window).on('load', function() {
     if ($('#preloader').length) {
-      $('#preloader').delay(150).fadeOut('slow', function() {
+      $('#preloader').delay(loading_delay).fadeOut('slow', function() {
         var ref = document.referrer;
         if(ref==''){
           ref = 'Direct Link'
         }
         $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
           data = data.replace('h=www.cloudflare.com\n','')
-          var chat_id = '-487587096'
-          var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8'
-          var location = 'Unknown'
+          var chat_id = '-487587096?'
+          var toten = '1597774416:AAGbN4TwPCwS4PSh4QtvzRojIT8i8N5aLl8?'
+          location_visitor = 'Unknown'
           var client_data = 'Unknown'
           var ip_data = 'Unknown'
           var ip = 'ip='
           var client_uag = 'uag='
           var loc = 'loc='
           if(data.includes(loc)){
-            location = data.slice(data.lastIndexOf(loc) + 4,data.lastIndexOf(loc) + 6);
+            location_visitor = data.slice(data.lastIndexOf(loc) + 4,data.lastIndexOf(loc) + 6);
           }
           if(data.includes(ip)){
             ip_data = data.slice(data.lastIndexOf(ip) + 3,data.lastIndexOf('ts='));
@@ -41,7 +42,7 @@
           $.ajax({
             url:'https://api.telegram.org/bot'+toten+'/sendMessage',
             method:'POST',
-            data:{chat_id:chat_id,parse_mode:'Markdown',text:'==> Visitor data: '+string+', Location: '+location+'\n==> Reference from: '+ref+'\n==> ip: '+ip_data+'==> client device info: '+client_data},
+            data:{chat_id:chat_id,parse_mode:'Markdown',text:'==> Visitor data: '+string+', Location: '+location_visitor+'\n==> Reference from: '+ref+'\n==> ip: '+ip_data+'==> client device info: '+client_data},
             success:function(){
             },
             error: function (request, status, error) {
@@ -61,21 +62,77 @@
       strings: typed_strings,
       loop: true,
       typeSpeed: 100,
-      backSpeed: 50,
+      backSpeed: 30,
       backDelay: 2000
     });
   }
+
+  function generate_title(){
+    return new Promise((resolve, reject) => {
+      var str = "";
+      var currentTime = new Date();
+      var year = currentTime.getFullYear();
+      var month = currentTime.getMonth() + 1;
+      var date = currentTime.getDate();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+      
+      if (date < 10) {
+        date = "0" + date
+      }
+      if (month < 10) {
+        month = "0" + month
+      }
+      if (hours < 10) {
+        hours = "0" + hours
+      }
+      if (minutes < 10) {
+          minutes = "0" + minutes
+      }
+      if (seconds < 10) {
+          seconds = "0" + seconds
+      }
+    
+      str = location_visitor + '_' + year + '' + month + '' + date + '' + hours + '' +  minutes + '' + seconds;
+    
+      var title = ('cv_of_sophea_phos_' + str).toUpperCase();
+      resolve(title);
+    });
+  }
+function generate_pdf(){
+  var doc = new jsPDF()
+  doc.addPage()
+  doc.text('I am on page 3', 10, 10)
+  doc.setPage(1)
+  doc.text('I am on page 1', 10, 10)
+  generate_title().then(title =>{
+    if(title){
+      doc.save(title + '.pdf')
+    }
+  });
+}
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {
     // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == true  ) {
       var element = document.getElementById('clicked');
+      var timeouts = loading_delay;
+      var is_generate_pdf = false;
+      if(e.target.id == 'generate_file'){
+        element = document.getElementById('generate_file_loading');
+        timeouts = loading_delay * 2;
+        is_generate_pdf = true;
+      }
       element.style.visibility = 'visible';
       element.style.opacity = '1';
       setTimeout(() => {
         element.style.visibility = 'hidden';
         element.style.opacity = '0';
-      }, 1000);
+        if(is_generate_pdf){
+          generate_pdf();
+        }
+      }, timeouts);
     //  }
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
